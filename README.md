@@ -28,8 +28,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
-|photo|text|null: true|
+|body|text|
+|photo|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
