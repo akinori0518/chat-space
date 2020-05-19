@@ -1,0 +1,36 @@
+.main-chat
+  .main-chat__group-info
+    .group-box
+      .group-box__group-name
+        aaa
+      .group-box__group-members
+        Members :
+        .group-box__group-members__list
+          y 
+    .edit-box
+      = link_to "Edit", "#", class: "edit-btn"
+        
+  .main-chat__message-list
+    #1.message-list-box 
+      .message-list-box__user-info
+        .user-info__name
+          y
+        .user-info__time
+          2020/05/18 10:00
+      .message-list-box__message
+        uuu 
+    #2.message-list-box 
+      .message-list-box__user-info
+        .user-info__name
+          yama
+        .user-info__time
+          2020/05/18 16:00
+      .message-list-box__message
+        ppp 
+  .main-chat__message-form
+    .message-form__typing-box
+      %input.typing-box__message{:placeholder => "type a message", :class => "input-message", :type => "text"}
+      %label.typing-box__photo
+        = icon('fas', 'image')
+        %input{type: "file", class: "photo"}
+    %input.message-form__submit-btn{:type => "submit", :name => "commit", :value => "Send", :class => "submit-btn"}

@@ -1,0 +1,99 @@
+.main-chat {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background-color: #ffffff;
+  &__group-info {
+    height: 100px;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    .group-box {
+      padding-left: 40px;
+      &__group-name {
+        font-size: 20px;
+        padding-top: 35px;
+        margin-bottom: 15px;
+        color: #333333;
+      }
+      &__group-members {
+        font-size: 12px;
+        color: #999999;
+        display: flex;
+        &__list {
+
+        }
+      }
+    }
+    .edit-box {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin: 30px 40px 0;
+      border: solid 1px #38aef0;
+    }
+    .edit-btn {
+      text-decoration: none;
+      color: #38aef0;
+      font-size: 16px;
+    }
+  }
+  &__message-list {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    .message-list-box {
+      padding: 35px 40px 46px;
+      &__user-info {
+        display: flex;
+        margin-bottom: 12px;
+        .user-info__name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333333;
+        }
+        .user-info__time {
+          font-size: 12px;
+          color: #999999;
+          margin-left: 10px;
+        }
+      }
+      &__message {
+        font-size: 14px;
+        color: #434a54;
+      }
+    }
+  }
+  &__message-form {
+    height: 90px;
+    background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    .message-form__typing-box {
+      width: 100%;
+      display: flex;
+      position: relative;
+      .input-message {
+        height: 50px;
+        width: 100%;
+        background-color: white;
+      }
+      .typing-box__photo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .photo {
+        display: none;
+      }
+    }
+    .message-form__submit-btn {
+      height: 50px;
+      width: 100px;
+      margin-left: 15px;
+      line-height: 50px;
+      text-align: center;
+      background-color: skyblue;
+      color: white;
+    }
+  }
+}
