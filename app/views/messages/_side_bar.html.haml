@@ -5,15 +5,17 @@
       .side-bar-box__name
       .side-bar-box__icons
         .icon__new-group
-          = link_to "#", class: "decoration" do 
+          = link_to new_group_path, class: "decoration" do 
             = icon('far', 'edit', class: 'new-group')
         .icon__edit-user
           = link_to edit_user_path(current_user), class: "decoration" do
             = icon('fas', 'cog', class: 'edit-user')
 
   .side-bar__group-list
-    .group-list-box
-      .group-list-box__group-name
-        aaa
-      .group-list-box__group-message
-        no message
+    - current_user.groups.each do |group|
+      .group-list-box
+        = link_to '#' do
+          .group-list-box__group-name
+            = group.name
+          .group-list-box__group-message
+            メッセージはまだありません
