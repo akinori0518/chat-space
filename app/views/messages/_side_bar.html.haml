@@ -1,14 +1,14 @@
 .side-bar
   .side-bar__user-name
     .side-bar-box
+      = current_user.name
       .side-bar-box__name
-        y
       .side-bar-box__icons
         .icon__new-group
           = link_to "#", class: "decoration" do 
             = icon('far', 'edit', class: 'new-group')
         .icon__edit-user
-          = link_to "#", class: "decoration" do
+          = link_to edit_user_path(current_user), class: "decoration" do
             = icon('fas', 'cog', class: 'edit-user')
 
   .side-bar__group-list
