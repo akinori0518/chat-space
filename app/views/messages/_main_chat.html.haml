@@ -2,35 +2,23 @@
   .main-chat__group-info
     .group-box
       .group-box__group-name
-        aaa
+        =@group.name
       .group-box__group-members
         Members :
-        .group-box__group-members__list
-          y 
+      .group-box__group-members__list
+        - @group.users.each do |user|
+          = user.name
     .edit-box
-      = link_to "Edit", "#", class: "edit-btn"
+      = link_to "Edit", edit_group_path(@group), class: "edit-btn"
         
   .main-chat__message-list
-    #1.message-list-box 
-      .message-list-box__user-info
-        .user-info__name
-          y
-        .user-info__time
-          2020/05/18 10:00
-      .message-list-box__message
-        uuu 
-    #2.message-list-box 
-      .message-list-box__user-info
-        .user-info__name
-          yama
-        .user-info__time
-          2020/05/18 16:00
-      .message-list-box__message
-        ppp 
+    = render @messages
+    
   .main-chat__message-form
-    .message-form__typing-box
-      %input.typing-box__message{:placeholder => "type a message", :class => "input-message", :type => "text"}
-      %label.typing-box__photo
-        = icon('fas', 'image')
-        %input{type: "file", class: "photo"}
-    %input.message-form__submit-btn{:type => "submit", :name => "commit", :value => "Send", :class => "submit-btn"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-message', placeholder: 'type a message'
+      .message-form__typing-box
+        = f.label :image, class: 'typing-box__photo' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'photo'
+        = f.submit 'Send', class: 'message-form__submit-btn'
