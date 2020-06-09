@@ -1,7 +1,8 @@
 $(function(){
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var formDara = new FormData(this);
+    var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -12,4 +13,5 @@ $(function(){
       contentType: false
     })
   });
+  
 });
