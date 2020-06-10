@@ -53,8 +53,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
-      $('form')[0].reset();
+      $('.main-chat__message-list').append(html);
+      $('#message_content').val('')
     })
   });
   
