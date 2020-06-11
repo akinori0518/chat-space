@@ -4,14 +4,15 @@
   background-color: #ffffff;
   &__group-info {
     height: 100px;
+    padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
     display: flex;
     justify-content: space-between;
+    
     .group-box {
-      padding-left: 40px;
+      margin-top: 35px;
       &__group-name {
         font-size: 20px;
-        padding-top: 35px;
         margin-bottom: 15px;
         color: #333333;
       }
@@ -40,6 +41,7 @@
   &__message-list {
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    overflow: scroll;
     .message-list-box {
       padding: 35px 40px 46px;
       &__user-info {
