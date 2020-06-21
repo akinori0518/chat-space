@@ -63,11 +63,10 @@ $(function(){
   });
   });
 
-  $(function() {
 
     var reloadMessages = function() {
 
-      var last_message_id = $('.message:last').data("message-id");
+      var last_message_id = $('.message-list-box:last').data("message-id");
       $.ajax({
         url: "api/messages",
         type: 'get',
@@ -82,13 +81,13 @@ $(function(){
         });
         $('.main-chat__message-list').append(insertHTML);
         $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
+        console.log("ok");
         }
       })
       .fail(function() {
         alert('error');
       });
     };
-  });
 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
